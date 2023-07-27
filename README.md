@@ -1,2 +1,2 @@
 # Final Project Fullstack Path GIGIH 3
- Final project for fullstack path at GIGIH 3 by GoTo Impact
+ For the explanation of backend and frontend, you may enter the folder first and there will be an explanation for them.
