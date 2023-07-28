@@ -20,6 +20,12 @@ Install dependencies
   npm install
 ```
 
+Config environment variable if necessary
+
+```bash
+  .env
+```
+
 Start the server
 
 ```bash
