@@ -1,3 +1,113 @@
+# **Backend Tokopedia Play Clone**
+
+# How to Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+# Database Structure
+
+This server connected with Mongo DB with collections schema:
+
+- Users
+```
+{
+  _id: ObjectID
+  username: string
+  password: string
+}
+```
+
+- Products
+```
+{
+  _id: ObjectID,
+  name: string,
+  img: string,
+  price: number,
+  user_id: {
+      type: ObjectID,
+      ref: 'Users'
+  }
+}
+```
+
+- Videos
+```
+{
+  _id: ObjectID,
+  title: string,
+  url: string,
+  img: string,
+  products: array,
+  user_id: {
+      type: ObjectID,
+      ref: 'Users'
+  }
+}
+```
+
+- Comments
+```
+{
+  _id: ObjectID
+  value: string,
+  timestamp: {
+      type: date,
+      default: Date.now
+  },
+  user_id: {
+      type: ObjectID,
+      ref: 'Users'
+  },
+  video_id: {
+      type: ObjectID,
+      ref: 'Videos'
+  }
+}
+```
+
+As you can see above, some of the collections related with other collections stated by having 'ref' means referencing to other collections.
+
+# API Structure
+
+Folders in this project:
+
+
+    .
+    ├── configs               *Contains all configuration for the server
+    │   ├── mongodb.js        *Database Mongo DB configuration
+    ├── controllers           *Contains all logics that will be sent to routes
+    ├── middleware            *Handle request before enter routes/controllers
+    ├── models                *Storing all schema from database
+    ├── routes                *Endpoint to enter the server
+    ├── .env                  *To store variable from outside
+    ├── app.js                *Main app to run the server
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+
 
 # API List
 
