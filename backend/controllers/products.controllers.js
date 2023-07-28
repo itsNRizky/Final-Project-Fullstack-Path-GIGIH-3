@@ -58,7 +58,7 @@ const deleteProduct = async (req, res) => {
       res.status(200).json({msg: `Data is still stored in: ${videos[0].title}`})
     } else {
       await Product.findByIdAndDelete(productId).exec()
-      res.status(200).redirect('/')
+      res.status(200).json({msg: 'Product deleted!!!!'})
     }
   } catch (err) {
     res.status(500).json({msg: `Error fetching data: ${err.message}`})

@@ -6,7 +6,7 @@ const productsSchema = new mongoose.Schema({
   price: Number,
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Users'
   } 
 })
 

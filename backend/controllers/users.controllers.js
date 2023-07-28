@@ -23,7 +23,7 @@ const createUser = async (req, res) => {
   try {
     const { username, password } = req.body
     await User.create({username, password})
-    res.status(200).redirect('/')
+    res.status(200).json({msg: 'User created!!'})
   } catch (err) {
     res.status(500).json({msg: `Error creating user: ${err.message}`})
   }

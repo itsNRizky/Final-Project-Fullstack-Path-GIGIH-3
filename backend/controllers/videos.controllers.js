@@ -53,7 +53,7 @@ const deleteVideo = async (req, res) => {
   try {
     const videoId = req.params.id
     await Video.findByIdAndDelete(videoId).exec()
-    res.status(200).redirect('/')
+    res.status(200).json({msg: 'Video deleted!'})
   } catch (err) {
     res.status(500).json({msg: `Error fetching data: ${err.message}`})
   }
