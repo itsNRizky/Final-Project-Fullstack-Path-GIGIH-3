@@ -136,7 +136,7 @@ Folders in this project:
   ``` 
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}`  
 \
 **GET /users/:id**
 ----
@@ -162,7 +162,7 @@ Folders in this project:
   ``` 
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **POST /users/signin**
 ----
@@ -185,7 +185,7 @@ Folders in this project:
   **Content:** `{msg: 'User created!!!'}`
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 #Products \
 **GET /products/**
@@ -201,20 +201,20 @@ Folders in this project:
 * **Code:** 200  
   **Content:**
   ```
-[
-    {
-        "_id": String,
-        "name": String,
-        "img": String,
-        "price": Number,
-        "user_id": String
-    },
-    ...
-]
+  [
+      {
+          "_id": String,
+          "name": String,
+          "img": String,
+          "price": Number,
+          "user_id": String
+      },
+      ...
+  ]
   ```
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **GET /products/:id**
 ----
@@ -239,7 +239,72 @@ Folders in this project:
   ```
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+    
+**POST /products/**
+----
+  Create product document.
+* **URL Params**  
+  None
+* **Body Params**  
+  **REQUIRED** :
+  ```
+  {
+    "name": String,
+    "img": String,
+    "price": Number,
+    "user_id": String
+  }
+  ```
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:** `{msg: 'Product addedd!!!'}`
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+
+**PUT /products/**
+----
+  Create product document.
+* **URL Params**  
+  None
+* **Body Params**  
+  **REQUIRED** :
+  ```
+  {
+    "_id": String
+    "name": String,
+    "img": String,
+    "price": Number,
+  }
+  ```
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:** `{msg: 'Product updated!!!'}`
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+
+**DELETE /products/:id**
+----
+  Create product document.
+* **URL Params**  
+  **REQUIRED** : `id=[string]`
+* **Body Params**  
+  **REQUIRED** :
+  None
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:** `{msg: 'Product deleted!!!'}`
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 
 #Videos \
@@ -256,21 +321,21 @@ Folders in this project:
 * **Code:** 200  
   **Content:**
   ```
-[
-    {
-        "_id": "String",
-        "title": "String",
-        "url": "String",
-        "img": "String",
-        "products": Array,
-        "user_id": "String"
-    },
-    ...
-]
+  [
+      {
+          "_id": "String",
+          "title": "String",
+          "url": "String",
+          "img": "String",
+          "products": Array,
+          "user_id": "String"
+      },
+      ...
+  ]
   ```
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **GET /videos/:id**
 ----
@@ -296,7 +361,7 @@ Folders in this project:
   ```
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **POST /users/videos**
 ----
@@ -330,7 +395,7 @@ Folders in this project:
   ```
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **POST /videos/**
 ----
@@ -355,7 +420,7 @@ Folders in this project:
   **Content:** `{msg: 'Video added!!!'}`  
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **PUT /videos/**
 ----
@@ -380,7 +445,7 @@ Folders in this project:
   **Content:** `{msg: 'Video updated!!!'}`  
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
 
 **DELETE /videos/**
 ----
@@ -396,4 +461,84 @@ Folders in this project:
   **Content:** `{msg: 'Video deleted!!!'}`  
 * **Error Response:**  
   * **Code:** 500  
-    **Content:** `{msg: `Error fetching data: ${error.message}`  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+
+#Comment \
+**GET /comments/**
+----
+  Return all comments
+* **URL Params**  
+  None
+* **Body Params**  
+  None
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:**
+  ```
+  [
+      {
+          "_id": String,
+          "value": String,
+          "user_id": String,
+          "video_id": String,
+          "timestamp": Date,
+      },
+      ...
+  ]
+  ```
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+
+**GET /comments/:id**
+----
+  Return specified comments based on video's id
+* **URL Params**  
+  **REQUIRED** : `id=[string]`
+* **Body Params**  
+  None
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:**
+  ```
+  [
+      {
+          "_id": String,
+          "value": String,
+          "user_id": String,
+          "video_id": String,
+          "timestamp": Date,
+      },
+      ...
+  ]
+  ```
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
+
+**POST /comments/**
+----
+  Return specified comments based on video's id
+* **URL Params**  
+  None
+* **Body Params**  
+  **REQUIRED** :
+  ```
+  {
+    "value": String,
+    "user_id": String,
+    "video_id": String"
+  }
+  ```
+* **Headers**  
+  Content-Type: application/json  
+* **Success Response:** 
+* **Code:** 200  
+  **Content:** `{msg: 'Comment added!!!'}` 
+* **Error Response:**  
+  * **Code:** 500  
+    **Content:** `{msg: Error fetching data: ${error.message}}` 
