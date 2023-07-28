@@ -5,7 +5,7 @@
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/itsNRizky/Final-Project-Fullstack-Path-GIGIH-3
 ```
 
 Go to the project directory
