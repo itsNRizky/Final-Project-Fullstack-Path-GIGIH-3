@@ -49,3 +49,5 @@ io.on("connection", (socket) => {
     console.log(`Socket ${socket.id} disconnected`);
   });
 });
+
+module.exports = server;
